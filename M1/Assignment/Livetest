@@ -1,0 +1,37 @@
+
+Question: Write a program to show the grades of Student taking input from User
+def get_student_grade(score):
+    if 90 <= score <= 100:
+        return 'A'
+    elif 80 <= score < 90:
+        return 'B'
+    elif 70 <= score < 80:
+        return 'C'
+    elif 60 <= score < 70:
+        return 'D'
+    elif 50 <= score < 60:
+        return 'E'
+    elif 40 <= score < 50:
+        return 'E-'
+    else:
+        return 'F or Fail'
+
+def get_float_input(prompt):
+    while True:
+        user_input = input(prompt)
+        try:
+            value = float(user_input)
+            if 0 <= value <= 100:  # Assuming the score must be between 0 and 100
+                return value
+            else:
+                print("Please enter a score between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a valid floating point number.")
+
+def main():
+    score = get_float_input("Enter the student's score (0 - 100): ")
+    grade = get_student_grade(score)
+    print(f"The student's score is: {score}, Grade: {grade}")
+
+if __name__ == "__main__":
+    main()
