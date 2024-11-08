@@ -1,0 +1,7 @@
+x=[1,5,2,9,3,22,13]
+
+def sort_me(num):
+    num.sort()
+    return print(num)
+
+sort_me(x)
